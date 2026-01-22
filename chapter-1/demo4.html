@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--
+    在这里我们使用了 v-on 绑定了 click 事件
+    并指定了名为 sayHi 的方法
+    -->
+    <button v-on:click="sayHi">点我</button>
+    <!-- v-on 指令的简写形式 @ -->
+    <button @click="sayHi">点我</button>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World 你好！'
+        },
+        // 方法必须定义在 Vue 实例的 methods 对象中
+        methods: {
+            sayHi: function (event) {
+                // `this` 在方法里指向当前 Vue 实例
+                alert(this.message);
+            }
+        }
+    });
+</script>
+</body>
+</html>

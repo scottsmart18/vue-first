@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- v-bind:value只能进行单向的数据渲染 -->
+    <input type="text" v-bind:value="searchMap.keyWord">
+    <!-- v-model 可以进行双向的数据绑定 -->
+    <input type="text" v-model="searchMap.keyWord">
+    <p>您要查询的是：{{searchMap.keyWord}}</p>
+</div>
+<div id="app2">
+    单复选框：
+    <input type="checkbox" id="checkbox" v-model="checked">
+    &nbsp;&nbsp;
+    <label for="checkbox">{{ checked }}</label>
+</div>
+<div id="app3">
+    单选按钮：
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <span>选中的值: {{ picked }}</span>
+</div>
+<div id="app4">
+    多复选框：
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <span>选中的值: {{ checkedNames }}</span>
+</div>
+<div id="app5">
+    下拉框：
+    <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <span>选中的值: {{ selected }}</span>
+</div>
+</script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            searchMap:{
+                keyWord: 'David Niu'
+            }
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el: '#app2',
+        data: {
+            checked: false
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el: '#app3',
+        data: {
+            picked: ''
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el: '#app4',
+        data: {
+            checkedNames: []
+        }
+    })
+</script>
+<script>
+    var vm = new Vue({
+        el: '#app5',
+        data: {
+            selected: ''
+        }
+    });
+</script>
+</body>
+</html>
