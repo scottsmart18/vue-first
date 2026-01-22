@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+
+  <li v-for="(item,index) in items">{{item.message}}</li>
+</div>
+
+
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data : {
+      items: [{message:'Hello说吧'},
+             {message: 'Hello Vue!好吧'},
+             {message: '你好吗？Vue!好吧'}]
+    }
+  })
+</script>
+</body>
+</html>
